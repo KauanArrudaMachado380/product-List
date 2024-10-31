@@ -1,0 +1,54 @@
+
+.cart_total{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    'textOrder price'
+    'delivery delivery'
+    'button button';
+    row-gap: 20px;
+}
+
+.cart_text{
+    grid-area: textOrder;
+    align-self: center;
+}
+
+.cart_price{
+    grid-area: price;
+    font-size: 1.5rem;
+    font-weight: 700;
+    justify-self: end;
+    align-self: center;
+}
+
+.cart_button{
+    grid-area: button;
+    padding: 15px 20px;
+    background-color: var(--Red);
+    color: var(--primary);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.cart_button:hover{
+    background-color: var(--confirm);
+}
+
+.delivery{
+    grid-area: delivery;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    background-color: var(--secundary);
+}
+
+.cart_img{
+    width: 45%;
+    align-self: center;
+}

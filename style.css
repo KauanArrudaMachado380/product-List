@@ -1,0 +1,379 @@
+@import url("reset.css");
+@import url("./css/cart.css");
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root {
+    --Red: hsl(14, 86%, 42%);
+    --Green: hsl(159, 69%, 38%);
+
+    --primary: hsl(20, 50%, 98%);
+    --secundary: hsl(13, 31%, 94%);
+    --text-primary: hsl(14, 25%, 72%);
+    --text-secundary: hsl(7, 20%, 60%);
+    --confirm: hsl(12, 19%, 35%);
+    --titule: hsl(14, 65%, 9%);
+
+    --font-primary: 'Red Hat Text', sans-serif;
+}
+
+body{
+    font-family: var(--font-primary);
+    background-color: var(--secundary);
+    height: 100vh;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* main */
+
+.titule{
+    color: var(--titule);
+    margin: 25px 0;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* container cards */
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* cards */
+
+.cards_desserts{
+    display: flex;
+    width: 340px;
+    flex-direction: column;
+}
+
+.img_dessert{
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* button */
+
+.cards_desserts__button{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3px;
+    align-self: center;
+    background-color: var(--primary);
+    border: 1px solid var(--titule);
+    border-radius: 30px;
+    padding: 12px 30px;
+
+    position: relative;
+    bottom: 27px;
+    cursor: pointer;
+}
+
+.button_cart{
+    width: 20px;
+    
+}
+
+.button_text{
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.cards_desserts__button:hover{
+    border-color: var(--Red);
+    color: var(--Red);
+}
+
+/* button clicked */
+
+.cards_desserts__button--clicked{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    align-self: center;
+    background-color: var(--Red);
+    border: 1px solid var(--Red);
+    border-radius: 30px;
+    padding: 12px 10px;
+    color: var(--primary);
+    position: relative;
+    bottom: 27px;
+    cursor: pointer;
+}
+
+.cards_desserts__button--clicked .button_plus, .cards_desserts__button--clicked .button_minus{
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid var(--primary);
+    padding: 2px 5px;
+    border-radius: 30px;
+}
+
+.quantity_order{
+    grid-area: order;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.minus{
+    position: relative;
+    bottom: 3.7px;
+}
+
+.cards_desserts__button--clicked .button_minus:hover, .cards_desserts__button--clicked .button_plus:hover{
+    background-color: var(--primary);
+}
+
+.button_minus:hover img {
+    content: url('./images/icon-decrement-quantity-active.svg');
+}
+
+.button_plus:hover img{
+    content: url('./images/icon-increment-quantity-active.svg');
+}
+
+/* animation on transition */
+
+.cards_desserts__button{
+    transition: .3s;
+}
+
+.cards_desserts__button--clicked{
+    transition: .3s;
+}
+
+/* card text area */
+
+.card_text_area{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    bottom: 10px;
+}
+
+.card_text_area h3{
+    color: var(--text-secundary);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.card_text_area h2{
+    color: var(--titule);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.card_text_area p{
+    color: var(--Red);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* container cart */
+
+.container_cart{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--primary);
+    padding: 30px 20px;
+    border-radius: 10px;
+}
+
+.cart_titule{
+    color: var(--Red);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.cart_empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.list_order__item{
+    display: grid;
+    grid-template-columns: repeat(3, auto) 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    'titule titule titule img'
+    'order price total img';
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(207, 207, 207, 0.432);
+    padding: 10px 0px;
+}
+
+.name_order{
+    grid-area: titule;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.quantity_number{
+    grid-area: order;
+    color: var(--Red);
+    font-weight: 500;
+}
+
+.price_order{
+    grid-area: price;
+    color: var(--text-secundary);
+    font-weight: 600;
+}
+
+.price_total{
+    grid-area: total;
+    color: var(--confirm);
+    font-weight: 600;
+}
+
+.list_order__button{
+    grid-area: img;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border: 1px solid var(--confirm);
+    border-radius: 30px;
+    padding: 4px 4px;
+    color: var(--confirm);
+    justify-self: end;
+    display: flex;
+}
+
+.list_order__button__img{
+    width: 13px;
+    justify-self: end;
+}
+
+/* footer */
+
+footer{
+    color: var(--titule);
+    background-color: var(--primary);
+    padding: 20px 0;
+    font-size: .8rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--titule);
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: var(--Red);
+}
+
+@media (min-width : 600px){
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 30px;
+        justify-content: center;
+        grid-template-areas: 
+        "title "
+        "cards"
+        "cart";
+    }
+
+    .titule{
+        grid-area: title;
+    }
+
+    .container{
+        grid-area: cards;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 300px));
+        gap: 30px;
+    }
+
+    .img_dessert{
+        width: 90%;
+    }
+
+    .cards_desserts__button, .cards_desserts__button--clicked{
+        right: 10px;
+    }
+
+    .container_cart{
+        grid-area: cart;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px){
+    main{
+        grid-template-columns: repeat(3, minmax(200px, 300px));
+        grid-template-rows: auto repeat(2, 1fr);
+        column-gap: 30px;
+        grid-template-areas: 
+        "title title cart"
+        "cards cards cart"
+        "cards cards .";
+    }
+
+    .container_cart{
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 3rem;
+        align-self: start;
+    }
+
+    .img_dessert{
+        width: 90%;
+    }
+
+    .cards_desserts__button, .cards_desserts__button--clicked{
+        right: 10px;
+    }
+}
+
+@media (min-width: 1400px){
+
+    main{
+        margin: 27px 0px;
+        column-gap: 30px;
+        grid-template-columns: repeat(4, minmax(200px, 300px));
+        grid-template-rows: 100px repeat(2, 1fr);
+        grid-template-areas: 
+        "title title title cart"
+        "cards cards cards cart"
+        "cards cards cards .";
+    }
+
+    .container{
+        grid-template-columns: repeat(3, minmax(200px, 300px));
+        gap: 30px;
+    }
+
+    .img_dessert{
+        width: 90%;
+    }
+
+    .cards_desserts__button, .cards_desserts__button--clicked{
+        right: 10px;
+    }
+
+    .container_cart{
+        width: 100%;
+        
+    }
+}
