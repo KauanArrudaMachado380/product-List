@@ -58,7 +58,7 @@ const cart = {
 
                 const cartButton = document.createElement('button');
                 cartButton.addEventListener('click', () => {
-                    cardConfirm.confirmOrders(listOrder ,cartPrice.textContent);
+                    cardConfirm.confirmOrders(cartPrice.textContent);
                 })
                 cartButton.classList.add('cart_button');
                 cartButton.textContent = 'Confirm Order';
