@@ -1,7 +1,7 @@
 import cart from './cart.js';
 
 const logica = {
-    recebendoValores(quantity, productName, productPrice, button) {
+    recebendoValores(quantity, productName, productPrice) {
 
         const list = document.querySelector('.list_order');
         

@@ -1,6 +1,6 @@
 import logica from "./soma.js";
 import buttonCardsDesserts from "./buttons.js";
-
+import cardConfirm from "./confirm.js"
 
 const cart = {
     verificandoCart() {
@@ -57,6 +57,9 @@ const cart = {
                 cartPrice.textContent = `$${item.querySelector('.price_order').textContent.replace('@ $', '')}`;
 
                 const cartButton = document.createElement('button');
+                cartButton.addEventListener('click', () => {
+                    cardConfirm.confirmOrders(cartPrice.textContent);
+                })
                 cartButton.classList.add('cart_button');
                 cartButton.textContent = 'Confirm Order';
 
