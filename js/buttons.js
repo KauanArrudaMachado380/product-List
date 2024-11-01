@@ -39,12 +39,9 @@ const buttonCardsDesserts = {
 
     resetButtons(button){
         
-            console.log(button);
-            
-
-            button.innerHTML = "";
-            button.classList.remove('cards_desserts__button--clicked');
-            button.classList.add('cards_desserts__button');
+            const newButton = document.createElement('button');
+            newButton.classList.add('cards_desserts__button');
+            newButton.id = button.id;
                     
             const imgCart = document.createElement('img');
             imgCart.classList.add('button_cart');
@@ -54,10 +51,15 @@ const buttonCardsDesserts = {
             text.classList.add('button_text');
             text.textContent = 'Add to cart';
     
-            button.appendChild(imgCart);
-            button.appendChild(text);
-            button.removeAttribute('data-clicked');
+            newButton.appendChild(imgCart);
+            newButton.appendChild(text);
         
+
+            newButton.addEventListener('click', () => {
+                buttonCardsDesserts.alterandoButtton(newButton);
+            })
+            
+            button.parentNode.replaceChild(newButton, button);
     },
 
     alterandoNumeros(plus, minus, quantityOrder, productName, productPrice, button){

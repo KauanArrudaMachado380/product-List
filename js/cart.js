@@ -72,9 +72,6 @@ const cart = {
                 cartTotal.appendChild(delivery);
                 cartTotal.appendChild(cartButton);
             }
-                
-                
-            
         }
     },
 

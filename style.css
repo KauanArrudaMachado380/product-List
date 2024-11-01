@@ -304,17 +304,26 @@ footer a:hover{
         gap: 30px;
     }
 
-    .img_dessert{
-        width: 90%;
+    .cards_desserts{
+        width: auto;
     }
 
-    .cards_desserts__button, .cards_desserts__button--clicked{
-        right: 10px;
+    .img_dessert{
+        width: 100%;
     }
 
     .container_cart{
         grid-area: cart;
-        width: 100%;
+        width: auto;
+    }
+
+    .cart_titule{
+        font-size: 2rem;
+        padding-left: 10px;
+    }
+
+    .cart_img{
+        width: 40%;
     }
 }
 
@@ -338,11 +347,7 @@ footer a:hover{
     }
 
     .img_dessert{
-        width: 90%;
-    }
-
-    .cards_desserts__button, .cards_desserts__button--clicked{
-        right: 10px;
+        width: 100%;
     }
 }
 
@@ -364,12 +369,12 @@ footer a:hover{
         gap: 30px;
     }
 
-    .img_dessert{
-        width: 90%;
+    .cards_desserts{
+        width: auto;
     }
 
-    .cards_desserts__button, .cards_desserts__button--clicked{
-        right: 10px;
+    .img_dessert{
+        width: 100%;
     }
 
     .container_cart{
