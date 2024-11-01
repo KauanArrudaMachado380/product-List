@@ -69,6 +69,10 @@ const buttonCardsDesserts = {
         plus.addEventListener('click', () => {
             let quantity = parseInt(quantityOrder.innerHTML);
             if(quantityOrder.innerHTML <= 9){
+                let titulo = document.querySelector('.cart_titule');
+
+                titulo.innerHTML = `Your Cart(${quantity + 1})`;
+
                 quantityOrder.innerHTML = quantity + 1;
 
                 quantityValue = parseInt(quantityOrder.innerHTML);
@@ -80,7 +84,12 @@ const buttonCardsDesserts = {
         minus.addEventListener('click', () => {
             let quantity = parseInt(quantityOrder.innerHTML);
             if(quantity > 0){
+
+                let titulo = document.querySelector('.cart_titule');
+
                 quantityOrder.innerHTML = quantity - 1;
+                titulo.innerHTML = `Your Cart(${quantity - 1})`;
+
                 quantityValue = parseInt(quantityOrder.innerHTML);
                 
                 logica.recebendoValores(quantityValue, productName, productPrice);

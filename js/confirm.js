@@ -1,9 +1,8 @@
 const cardConfirm = {
 
-    confirmOrders (cartPrice){
+    confirmOrders (listOrder,cartPrice){
 
-        const listOrder = document.querySelector('.list_order');
-        
+        console.log(listOrder);
 
         const confirmDiv = document.createElement('div');
         confirmDiv.classList.add('card_confirm');
@@ -25,7 +24,8 @@ const cardConfirm = {
 
         listOrder.forEach((order) => {
             this.cardsDesserts(order);
-        })
+            
+        });
 
         const orderTotal = document.createElement('p');
         orderTotal.classList.add('card_confirm-orderTotal');
@@ -43,14 +43,19 @@ const cardConfirm = {
     cardsDesserts (order){ 
         
         const img = document.createElement('img');
+        img.classList.add('card_confirm-img');
 
         const titule = document.createElement('h2');
+        titule.classList.add('card_confirm-titule');
         
         const quantity = document.createElement('p');
+        quantity.classList.add('card_confirm-quantity');
 
         const price = document.createElement('p');
+        price.classList.add('card_confirm-price');
 
         const totalPrice = document.createElement('p');
+        totalPrice.classList.add('card_confirm-totalPrice');
     }
 }
 

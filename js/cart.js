@@ -58,7 +58,7 @@ const cart = {
 
                 const cartButton = document.createElement('button');
                 cartButton.addEventListener('click', () => {
-                    cardConfirm.confirmOrders(cartPrice.textContent);
+                    cardConfirm.confirmOrders(listOrder ,cartPrice.textContent);
                 })
                 cartButton.classList.add('cart_button');
                 cartButton.textContent = 'Confirm Order';
@@ -81,6 +81,7 @@ const cart = {
     createListOrder(nome, quantidade, preco) {
 
         const listOrder = document.querySelector('.list_order');
+        
 
         const li = document.createElement('li');
         li.classList.add('list_order__item');
@@ -121,7 +122,6 @@ const cart = {
         img.classList.add('list_order__button__img');
 
         button.appendChild(img);
-
 
         li.appendChild(nameOrder);
         li.appendChild(quantityOrder);
