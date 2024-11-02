@@ -27,7 +27,6 @@ const products = {
 
             button.addEventListener('click', () => {
                 buttons.alterandoButtton(button);
-
             });
 
             const imgCart = document.createElement('img');

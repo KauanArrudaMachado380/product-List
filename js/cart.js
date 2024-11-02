@@ -81,7 +81,6 @@ const cart = {
     createListOrder(nome, quantidade, preco) {
 
         const listOrder = document.querySelector('.list_order');
-        
 
         const li = document.createElement('li');
         li.classList.add('list_order__item');
@@ -104,23 +103,32 @@ const cart = {
 
         const buttonDessert = document.getElementById(`${nome.replace(/\s+/g, '-')}`);
 
+        
         const button = document.createElement('button');
         button.addEventListener('click', () => {
             
             if(buttonDessert){
                 buttonCardsDesserts.resetButtons(buttonDessert);
             }
-
+            
             listOrder.removeChild(li);
             logica.calculandoTotal();
             this.verificandoCart();
+            
+            let titulo = document.querySelector('.cart_titule');
+            let currentCount = parseInt(titulo.textContent.match(/\d+/)[0]);
+            titulo.innerHTML = `Your Cart (${currentCount - quantityOrder.textContent.replace('x', '')})`;
         });
-
+        
         button.classList.add('list_order__button');
         const img = document.createElement('img');
         img.src = './images/icon-remove-item.svg';
         img.classList.add('list_order__button__img');
-
+        
+        let titulo = document.querySelector('.cart_titule');
+        let currentCount = parseInt(titulo.textContent.match(/\d+/)[0]);
+        titulo.innerHTML = `Your Cart(${currentCount})`;
+        
         button.appendChild(img);
 
         li.appendChild(nameOrder);
@@ -129,6 +137,8 @@ const cart = {
         li.appendChild(priceTotal);
         li.appendChild(button);
         listOrder.appendChild(li);
+
+        
     },
 
     atualizarTotal(preco) {

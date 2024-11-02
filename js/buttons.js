@@ -65,15 +65,17 @@ const buttonCardsDesserts = {
     alterandoNumeros(plus, minus, quantityOrder, productName, productPrice, button){
         
         let quantityValue = parseInt(quantityOrder.innerHTML);
+        
 
         plus.addEventListener('click', () => {
             let quantity = parseInt(quantityOrder.innerHTML);
             if(quantityOrder.innerHTML <= 9){
-                let titulo = document.querySelector('.cart_titule');
 
-                titulo.innerHTML = `Your Cart(${quantity + 1})`;
+                let titulo = document.querySelector('.cart_titule');
+                let currentCount = parseInt(titulo.textContent.match(/\d+/)[0]);
 
                 quantityOrder.innerHTML = quantity + 1;
+                titulo.innerHTML = `Your Cart(${currentCount + 1})`;
 
                 quantityValue = parseInt(quantityOrder.innerHTML);
                 
@@ -86,9 +88,10 @@ const buttonCardsDesserts = {
             if(quantity > 0){
 
                 let titulo = document.querySelector('.cart_titule');
+                let currentCount = parseInt(titulo.textContent.match(/\d+/)[0]);
 
                 quantityOrder.innerHTML = quantity - 1;
-                titulo.innerHTML = `Your Cart(${quantity - 1})`;
+                titulo.innerHTML = `Your Cart(${currentCount - 1})`;
 
                 quantityValue = parseInt(quantityOrder.innerHTML);
                 
