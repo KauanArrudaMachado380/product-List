@@ -1,0 +1,206 @@
+.container_confirm {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.card_confirm {
+    background-color: var(--primary);
+    border-radius: 20px;
+    padding: 30px 20px 0 20px;
+    width: 100%;
+    height: 80%;
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card_confirm-img {
+    width: 45px;
+}
+
+.card_confirm-titule {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-right: 20px;
+}
+
+.card_confirm-text {
+    color: var(--text-secundary);
+    font-size: 1rem;
+    font-weight: 400;
+    padding-right: 20px;
+}
+
+.card_confirm-orders {
+    background-color: var(--secundary);
+    border-radius: 15px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card_confirm-totalPriceDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-bottom: 10px;
+}
+
+.card_confirm-totalPrice {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card_confirm-orderTotal{
+    font-size: 1.1rem;
+}
+
+.card_confirm-button {
+    align-items: end;
+    padding: 19px 20px;
+    background-color: var(--Red);
+    color: var(--secundary);
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+/* confirm item style */
+
+.confirm_item {
+    display: grid;
+    grid-template-areas: 
+        'img titule titule total'
+        'img quantity price total';
+    ;
+    grid-template-columns: auto 40px repeat(2, auto);
+    grid-template-rows: repeat(2, 40px);
+    align-items: center;
+    
+    border-bottom: 1px solid rgba(207, 207, 207, 0.432);
+    padding: 20px 0px;
+}
+
+.confirm_item-titule{
+    grid-area: titule;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.confirm_item-img{
+    grid-area: img;
+    width: 80%;
+}
+
+.confirm_item-quantity{
+    grid-area: quantity;
+    color: var(--Red);
+    font-weight: 700;
+}
+
+.confirm_item-price{
+    grid-area: price;
+    color: var(--text-secundary);
+    font-weight: 600;
+}
+
+.confirm_item-totalPrice{
+    grid-area: total;
+    justify-self: end;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+@media screen and (min-width: 600px) {
+    
+    .card_confirm {
+        width: 60%;
+        height: auto;
+        align-self: center;
+        padding: 30px 40px;
+        margin: 3rem;   
+    }
+
+    .confirm_item{
+        grid-template-columns: 100px 40px auto 80px;
+        column-gap: 20px;
+    }
+
+    .card_confirm-titule {
+        font-size: 2.5rem;
+    }
+
+    .card_confirm-text {
+        font-size: 1.1rem;
+    }
+
+    .card_confirm-orders {
+        padding: 30px;
+    }
+
+    .confirm_item-titule{
+        font-size: 1.3rem;
+    }
+
+    .confirm_item-img{
+        width: 100px;
+    }
+
+    .confirm_item-quantity{
+        font-size: 1.2rem;
+    }
+
+    .confirm_item-price{
+        font-size: 1.2rem;
+    }
+
+    .confirm_item-totalPrice{
+        font-size: 1.4rem;
+    }
+
+    .card_confirm-button {
+        padding: 25px;
+        border-radius: 40px;
+        font-size: 1.2rem;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .card_confirm{
+        align-self: center;
+        width: 500px;
+    }
+}
+
+@media screen and (min-width: 1440px){
+
+    .card_confirm{
+        width: 600px;
+        padding: 40px;
+    }
+
+    .confirm_item-img{
+        width: 85%;
+    }
+
+    .card_confirm-orders{
+        padding: 10px 20px 20px 20px;
+        margin-bottom: 20px;
+    }
+}

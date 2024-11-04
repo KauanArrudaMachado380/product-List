@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     allProducts = await products.getProducts();
 
+    window.allProducts = allProducts;
+
     await products.createProduct(container);
     
     cart.verificandoCart();
