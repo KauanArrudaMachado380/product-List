@@ -15,9 +15,9 @@
 .card_confirm {
     background-color: var(--primary);
     border-radius: 20px;
-    padding: 30px 20px 0 20px;
+    padding: 30px 20px 20px 20px;
     width: 100%;
-    height: 80%;
+    height: 76%;
     align-self: end;
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@
     flex-direction: column;
     gap: 10px;
 
-    max-height: 400px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
@@ -101,6 +101,9 @@
     grid-area: titule;
     font-size: 0.8rem;
     font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .confirm_item-img{
