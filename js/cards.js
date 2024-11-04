@@ -43,8 +43,8 @@ const products = {
             const textArea = document.createElement('div');
             textArea.classList.add('card_text_area');
 
-            const h3 = document.createElement('h3');
-            h3.classList.add('card_title');
+            const h3 = document.createElement('h2');
+            h3.classList.add('card_category');
             h3.textContent = product.category;
 
             const h2 = document.createElement('h2');            

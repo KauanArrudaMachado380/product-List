@@ -160,19 +160,19 @@ body{
     bottom: 10px;
 }
 
-.card_text_area h3{
+.card_category{
     color: var(--text-secundary);
     font-size: 1rem;
     font-weight: 400;
 }
 
-.card_text_area h2{
+.card_title{
     color: var(--titule);
     font-size: 1.1rem;
     font-weight: 700;
 }
 
-.card_text_area p{
+.card_price{
     color: var(--Red);
     font-size: 1.1rem;
     font-weight: 700;
