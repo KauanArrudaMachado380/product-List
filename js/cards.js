@@ -20,6 +20,7 @@ const products = {
             const img = document.createElement('img');
             img.classList.add('img_dessert');
             img.src = this.alterandoImagems(product);
+            img.alt = product.category;
 
             const button = document.createElement('button');
             button.classList.add('cards_desserts__button');
@@ -32,6 +33,7 @@ const products = {
             const imgCart = document.createElement('img');
             imgCart.classList.add('button_cart');
             imgCart.src = './images/icon-add-to-cart.svg';
+            imgCart.alt = ''
 
             const text = document.createElement('p');
             text.classList.add('button_text');

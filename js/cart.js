@@ -123,6 +123,7 @@ const cart = {
         button.classList.add('list_order__button');
         const img = document.createElement('img');
         img.src = './images/icon-remove-item.svg';
+        img.alt = 'Remove button';
         img.classList.add('list_order__button__img');
         
         let titulo = document.querySelector('.cart_titule');
