@@ -44,17 +44,20 @@
 .card_confirm-orders {
     background-color: var(--secundary);
     border-radius: 15px;
-    padding: 30px 20px;
+    padding: 5px 20px 30px 20px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
+
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .card_confirm-totalPriceDiv{
     display: flex;
     justify-content: space-between;
     align-items: end;
-    padding-bottom: 10px;
+    padding: 20px 0 10px 0;
 }
 
 .card_confirm-totalPrice {
@@ -86,7 +89,7 @@
         'img titule titule total'
         'img quantity price total';
     ;
-    grid-template-columns: auto 40px repeat(2, auto);
+    grid-template-columns: 90px 40px repeat(2, auto);
     grid-template-rows: repeat(2, 40px);
     align-items: center;
     
@@ -96,34 +99,39 @@
 
 .confirm_item-titule{
     grid-area: titule;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 700;
 }
 
 .confirm_item-img{
     grid-area: img;
-    width: 80%;
+    width: 70px;
 }
 
 .confirm_item-quantity{
     grid-area: quantity;
     color: var(--Red);
     font-weight: 700;
+    font-size: .9rem;
 }
 
 .confirm_item-price{
     grid-area: price;
     color: var(--text-secundary);
     font-weight: 600;
+    font-size: .9rem;
 }
 
 .confirm_item-totalPrice{
     grid-area: total;
     justify-self: end;
-    font-size: 1.1rem;
+    font-size: .9rem;
     font-weight: 600;
 }
 
+.card_confirm-totalPrice{
+    font-size: 1.3rem;
+}
 
 @media screen and (min-width: 600px) {
     
@@ -132,20 +140,21 @@
         height: auto;
         align-self: center;
         padding: 30px 40px;
-        margin: 3rem;   
+        margin: 3rem;
     }
-
+    
     .confirm_item{
         grid-template-columns: 100px 40px auto 80px;
         column-gap: 20px;
     }
-
+    
     .card_confirm-titule {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        
     }
 
     .card_confirm-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .card_confirm-orders {
@@ -154,6 +163,8 @@
 
     .confirm_item-titule{
         font-size: 1.3rem;
+        flex-wrap: nowrap;
+        text-overflow: ellipsis;
     }
 
     .confirm_item-img{
@@ -186,6 +197,47 @@
         align-self: center;
         width: 500px;
     }
+
+    .card_confirm-img{
+        width: 35px
+    }
+
+    .card_confirm-titule{
+        font-size: 2rem;
+    }
+
+    .card_confirm-text{
+        font-size: 1rem;
+    }
+
+    .card_confirm-orders{
+        padding: 20px;
+    }
+
+    .confirm_item{
+        padding: 10px;
+        text-overflow: ellipsis;
+    }
+
+    .confirm_item-titule{
+        font-size: 1rem;
+    }
+
+    .confirm_item-img{
+        width: 80%;
+    }
+
+    .confirm_item-price{
+        font-size: 1rem;
+    }
+
+    .confirm_item-quantity{
+        font-size: 1rem;
+    }
+
+    .confirm_item-totalPrice{
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (min-width: 1440px){
@@ -195,6 +247,14 @@
         padding: 40px;
     }
 
+    .card_confirm-titule{
+        font-size: 2.5rem;
+    }
+
+    .card_confirm-text{
+        font-size: 1.3rem;
+    }
+
     .confirm_item-img{
         width: 85%;
     }
@@ -202,5 +262,9 @@
     .card_confirm-orders{
         padding: 10px 20px 20px 20px;
         margin-bottom: 20px;
+    }
+
+    .card_confirm-totalPriceDiv{
+        padding: 10px;
     }
 }

@@ -324,40 +324,20 @@ footer a:hover{
     }
 
     .cart_img{
-        width: 40%;
+        width: 30%;
+    }
+
+    .cart_text{
+        font-size: 1.2rem;
+        padding: 10px 0;
     }
 }
 
 @media (min-width: 1024px){
     main{
-        grid-template-columns: repeat(3, minmax(200px, 300px));
-        grid-template-rows: auto repeat(2, 1fr);
-        column-gap: 30px;
-        grid-template-areas: 
-        "title title cart"
-        "cards cards cart"
-        "cards cards .";
-    }
-
-    .container_cart{
-        width: 100%;
-        height: auto;
-        position: relative;
-        top: 3rem;
-        align-self: start;
-    }
-
-    .img_dessert{
-        width: 100%;
-    }
-}
-
-@media (min-width: 1400px){
-
-    main{
         margin: 27px 0px;
         column-gap: 30px;
-        grid-template-columns: repeat(4, minmax(200px, 300px));
+        grid-template-columns: repeat(3, minmax(200px, 240px)) 250px ;
         grid-template-rows: 100px repeat(2, 1fr);
         grid-template-areas: 
         "title title title cart"
@@ -366,7 +346,51 @@ footer a:hover{
     }
 
     .container{
-        grid-template-columns: repeat(3, minmax(200px, 300px));
+        grid-template-columns: repeat(3, minmax(200px, 240px));
+        gap: 30px;
+    }
+
+    .container_cart{
+        
+        width: 100%;
+        height: auto;
+        position: relative;
+        
+        align-self: start;
+    }
+
+    .img_dessert{
+        width: 100%;
+    }
+
+    .cart_img{
+        width: 40%;
+    }
+
+    .cart_text{
+        font-size: .9rem;
+    }
+
+    .cart_titule{
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 1400px){
+
+    main{
+        margin: 27px 0px;
+        column-gap: 30px;
+        grid-template-columns: repeat(4, minmax(200px, 275px));
+        grid-template-rows: 100px repeat(2, 1fr);
+        grid-template-areas: 
+        "title title title cart"
+        "cards cards cards cart"
+        "cards cards cards .";
+    }
+
+    .container{
+        grid-template-columns: repeat(3, minmax(200px, 275px));
         gap: 30px;
     }
 
@@ -379,7 +403,9 @@ footer a:hover{
     }
 
     .container_cart{
-        width: 100%;
-        
+        width: 320px;  
+        top: 0px; 
     }
+
+    
 }
