@@ -35,7 +35,7 @@ const products = {
             imgCart.src = './images/icon-add-to-cart.svg';
             imgCart.alt = ''
 
-            const text = document.createElement('p');
+            const text = document.createElement('span');
             text.classList.add('button_text');
             text.textContent = 'Add to cart';
 
